@@ -14,7 +14,6 @@ export const Navbar = ({ className }: NavbarProps) => {
         <div className={classNames(cls.Navbar, {}, [className])}>
             <div className={cls.links}>
                 <AppLink theme={AppLinkTheme.INVERTED} to="/" className={cls.mainLink}>{t('Главная')}</AppLink>
-                {/* eslint-disable-next-line i18next/no-literal-string */}
                 <AppLink theme={AppLinkTheme.INVERTED} to="/about">{t('О cайте')}</AppLink>
             </div>
         </div>
