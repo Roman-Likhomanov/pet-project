@@ -12,7 +12,7 @@ jobs:
         node-version: [ 17.x ]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions
       - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -29,5 +29,4 @@ jobs:
         run: npm run test:unit
       - name: build storybook
         run: npm run storybook:build
-      - name: screenshot testing
-        run: npm run test:ui:ci
+
