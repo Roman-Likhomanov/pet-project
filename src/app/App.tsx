@@ -9,10 +9,9 @@ import { Button } from 'shared/ui/Button/ui/Button';
 
 const App = () => {
     const { theme } = useTheme();
-    const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <div className={classNames('app', { hovered: true }, [theme])}>
+        <div className={classNames('app', { hovered: true }, [])}>
             <Suspense fallback="">
                 <Navbar />
                 <div className="contentPage">
