@@ -1,6 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import React, { ReactNode, useCallback, useEffect } from 'react';
+import React, {
+    ReactNode, useCallback, useEffect, useState,
+} from 'react';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -9,12 +11,15 @@ interface ModalProps {
     children?: ReactNode
     isOpen?: boolean
     onClose?: () => void
+    lazy?: boolean
 }
 
 export const Modal = ({
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy,
 }: ModalProps) => {
     const { t } = useTranslation();
+
+    const [isMounted, setIsMounted] = useState(false);
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -38,12 +43,20 @@ export const Modal = ({
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown);
         }
         return () => {
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
+
+    if (lazy && !isMounted) return null;
 
     return (
         <Portal>
