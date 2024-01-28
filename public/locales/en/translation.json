@@ -12,5 +12,9 @@
   "Increment": "Increment",
   "Decrement": "Decrement",
   "Войти": "Login",
-  "Введите имя пользователя": "Input username"
+  "Введите имя": "Input username",
+  "Введите пароль": "Input password",
+  "Форма авторизации": "Authorization form",
+  "Выйти": "Logout",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password"
 }
