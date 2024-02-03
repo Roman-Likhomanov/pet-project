@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
@@ -28,7 +27,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     }, []);
 
     const onLogout = useCallback(() => {
-        dispatch(userActions.logout);
+        dispatch(userActions.logout());
     }, [dispatch]);
 
     if (userAuthData) {
@@ -54,7 +53,7 @@ export const Navbar = ({ className }: NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
         </div>
     );
 };
