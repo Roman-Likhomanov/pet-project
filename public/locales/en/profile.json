@@ -2,5 +2,11 @@
   "Профиль": "Profile",
   "Редактировать": "Edit",
   "Ваше имя": "Your name",
-  "Ваша фамилия": "Your lastname"
+  "Ваша фамилия": "Your lastname",
+  "Произошла ошибка при загрузке": "There was an error loading",
+  "Попробуйте обновить": "Try updating",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Укажите валюту": "Specify currency",
+  "Укажите страну": "Indicate your country"
 }

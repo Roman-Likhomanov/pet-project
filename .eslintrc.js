@@ -48,6 +48,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'linebreak-style': ['error', 'unix'],
     },
     globals: {
         __IS_DEV__: true,
