@@ -8,5 +8,10 @@
   "Отменить": "Cancel",
   "Сохранить": "Save",
   "Укажите валюту": "Specify currency",
-  "Укажите страну": "Indicate your country"
+  "Укажите страну": "Indicate your country",
+  "Имя и фамилия обязательны": "First and last name are required",
+  "Некорректный возраст": "Incorrect age",
+  "Некорректный регион": "Invalid region",
+  "Данные не указаны": "Data not provided",
+  "Серверная ошибка при сохранении": "Server error when saving"
 }
