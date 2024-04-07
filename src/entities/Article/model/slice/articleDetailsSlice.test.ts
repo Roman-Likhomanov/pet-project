@@ -1,22 +1,9 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from 'entities/Article';
+import { Article, ArticleDetailsShema } from 'entities/Article';
+import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import ArticleDetailsPage from './ArticleDetailsPage';
 
-export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
-
-const article: Article = {
+const data: Article = {
     id: '1',
     title: 'Java Script news',
     subtitle: 'Что нового в JS в 2024',
@@ -86,10 +73,22 @@ const article: Article = {
     ],
 };
 
-export const Normal = Template.bind({});
-Normal.args = {};
-Normal.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+describe('articleDetailsSlice.test', () => {
+    test('test fetchArticleById service pending', () => {
+        const state: DeepPartial<ArticleDetailsShema> = { isLoading: false };
+        expect(articleDetailsReducer(state as ArticleDetailsShema, fetchArticleById.pending))
+            .toEqual({
+                isLoading: true,
+            });
+    });
+
+    test('test fetchArticleById service fulfilled', () => {
+        const state: DeepPartial<ArticleDetailsShema> = { isLoading: true };
+        expect(articleDetailsReducer(state as ArticleDetailsShema, fetchArticleById.fulfilled(data, '', '')))
+            .toEqual({
+                isLoading: false,
+                error: undefined,
+                data,
+            });
+    });
+});
