@@ -102,6 +102,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test",
+      "id": "JfuhxQ-"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ha ha",
+      "id": "Hyfcz_w"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "hello",
+      "id": "6fWBfm4"
     }
   ],
   "users": [
@@ -117,17 +135,31 @@
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://editorialge.com/wp-content/uploads/2022/10/Andrew-Tate-Net-Worth-2022.jpeg"
+      "avatar": "https://staticg.sportskeeda.com/editor/2023/04/1c8a0-16807861841875-1920.jpg"
     }
   ],
-  "profile": {
-    "first": "yyrt",
-    "lastname": "Likhomanov",
-    "age": 123,
-    "currency": "USD",
-    "country": "BELARUS",
-    "city": "",
-    "username": "admin",
-    "avatar": "https://editorialge.com/wp-content/uploads/2022/10/Andrew-Tate-Net-Worth-2022.jpeg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "yyrt",
+      "lastname": "Likhomanov",
+      "age": 123,
+      "currency": "USD",
+      "country": "BELARUS",
+      "city": "",
+      "username": "admin",
+      "avatar": "https://editorialge.com/wp-content/uploads/2022/10/Andrew-Tate-Net-Worth-2022.jpeg"
+    },
+    {
+      "id": "2",
+      "first": "Tristan",
+      "lastname": "Teit",
+      "age": 123,
+      "currency": "USD",
+      "country": "BELARUS",
+      "city": "",
+      "username": "admin",
+      "avatar": "https://staticg.sportskeeda.com/editor/2023/04/1c8a0-16807861841875-1920.jpg"
+    }
+  ]
 }
