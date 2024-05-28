@@ -9,6 +9,11 @@ describe('fetchArticleById.test', () => {
     test('sucсess fetchArticleById', async () => {
         const data: Article = {
             id: '1',
+            user: {
+                id: '1',
+                username: 'Roman',
+                avatar: 'https://staticg.sportskeeda.com/editor/2023/04/1c8a0-16807861841875-1920.jpg',
+            },
             title: 'Java Script news',
             subtitle: 'Что нового в JS в 2024',
             img: 'https://is4-ssl.mzstatic.com/image/thumb/Purple22/v4/04/73/93/047393e8-bba1-dcf1-149f-f6906fa15e17/source/512x512bb.jpg',
