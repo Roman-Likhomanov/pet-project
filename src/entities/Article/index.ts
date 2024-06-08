@@ -6,3 +6,4 @@ export { Article, ArticleView } from './model/types/article';
 export { ArticleDetailsShema } from './model/types/articleDetailsShema';
 
 export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
