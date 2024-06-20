@@ -4,5 +4,9 @@ import { Article, ArticleView } from 'entities/Article';
 export interface ArticlesPageSchema extends EntityState<Article> {
     isLoading?: boolean;
     error?: string;
-    view: ArticleView
+    view: ArticleView;
+    // paginator
+    page: number;
+    limit?: number;
+    hasMore: boolean;
 }
