@@ -1,9 +1,14 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlesPage } from 'pages/ArticlesPage/model/services/initArticlesPage/initArticlesPage';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');
+
+jest.mock('URL', () => ({
+    searchParams: {
+        get: jest.fn(),
+    },
+}));
 
 describe('initArticlesPage.test', () => {
     test('sucсess initArticlesPage', async () => {
@@ -19,10 +24,13 @@ describe('initArticlesPage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        (URL as any).searchParams?.get.mockReturnValueOnce('value');
+
+        await thunk.callThunk((new URL('?key=value', 'http://example.com')).searchParams);
 
         expect(thunk.dispatch).toBeCalledTimes(4);
         expect(fetchArticlesList).toHaveBeenCalled();
+        // expect((URL as any).searchParams?.get)?.toHaveBeenCalledWith('key');
     });
 
     test('initArticlesPage not called', async () => {
@@ -38,7 +46,7 @@ describe('initArticlesPage.test', () => {
             },
         });
 
-        await thunk.callThunk();
+        await thunk.callThunk((new URL('?key=value', 'http://example.com')).searchParams);
 
         expect(thunk.dispatch).toBeCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();
