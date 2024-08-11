@@ -8,11 +8,11 @@ describe('fetchNextArticlesPage.test', () => {
     test('sucсess fetchNextArticlesPage', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
             articlesPage: {
-                isLoading: false,
+                page: 2,
                 ids: [],
                 entities: {},
-                page: 2,
                 limit: 5,
+                isLoading: false,
                 hasMore: true,
             },
         });
@@ -20,7 +20,7 @@ describe('fetchNextArticlesPage.test', () => {
         await thunk.callThunk();
 
         expect(thunk.dispatch).toBeCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+        expect(fetchArticlesList).toHaveBeenCalledWith({});
     });
 
     test('fetchNextArticlesPage not called', async () => {
