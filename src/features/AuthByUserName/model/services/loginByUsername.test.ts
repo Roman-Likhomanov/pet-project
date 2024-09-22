@@ -1,7 +1,6 @@
-import axios from 'axios';
-import { loginByUsername } from 'features/AuthByUserName/model/services/loginByUsername';
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { loginByUsername } from '../services/loginByUsername';
 
 describe('loginByUsername.test', () => {
     // let dispatch: Dispatch;

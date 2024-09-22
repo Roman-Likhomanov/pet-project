@@ -1,9 +1,6 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
-import { fetchProfileData } from 'entities/Profile';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
-import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { Article, ArticleBlockType, ArticleType } from '../../../model/types/article';
+import { fetchArticleById } from '../../../model/services/fetchArticleById/fetchArticleById';
 
 describe('fetchArticleById.test', () => {
     test('sucсess fetchArticleById', async () => {

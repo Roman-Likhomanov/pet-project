@@ -1,8 +1,8 @@
-import {
-    profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
-} from 'entities/Profile';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import {
+    profileActions, profileReducer, ProfileSchema, updateProfileData, ValidateProfileError,
+} from '../../index';
 
 const data = {
     first: 'Roman',

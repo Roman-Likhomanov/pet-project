@@ -1,4 +1,4 @@
-import { ArticlesPageSchema } from 'pages/ArticlesPage/model/types/articlesPageSchema';
+import { ArticlesPageSchema } from './model/types/articlesPageSchema';
 
 export {
     ArticlesPageAsync as ArticlesPage,

@@ -1,4 +1,4 @@
-import { Article } from 'entities/Article/model/types/article';
+import { Article } from './model/types/article';
 
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 

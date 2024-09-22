@@ -1,5 +1,5 @@
-import { loginActions, loginReducer } from 'features/AuthByUserName/model/slice/loginSlice';
-import { LoginSchema } from 'features/AuthByUserName';
+import { loginActions, loginReducer } from '../slice/loginSlice';
+import { LoginSchema } from '../../index';
 
 describe('loginSlice.test', () => {
     test('test set username', () => {

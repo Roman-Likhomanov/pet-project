@@ -1,7 +1,7 @@
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { fetchProfileData } from 'entities/Profile';
+import { fetchProfileData } from '../../../index';
 
 describe('fetchProfileData.test', () => {
     test('sucсess fetchProfileData', async () => {

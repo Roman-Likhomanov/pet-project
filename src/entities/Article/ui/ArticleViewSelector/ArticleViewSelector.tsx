@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { ArticleView } from 'entities/Article';
 import TiledIcon from 'shared/assets/icons/fe_tiled.svg';
 import ListIcon from 'shared/assets/icons/bi_list.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { ArticleView } from '../../index';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorProps {

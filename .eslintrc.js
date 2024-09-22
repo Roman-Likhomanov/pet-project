@@ -22,6 +22,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'roman-lee-plugin',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -50,6 +51,7 @@ module.exports = {
         'no-undef': 'off',
         'linebreak-style': ['error', 'unix'],
         'react/no-array-index-key': 'off',
+        'roman-lee-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,

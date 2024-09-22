@@ -1,4 +1,4 @@
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
+import { getProfileData } from './model/selectors/getProfileData/getProfileData';
 
 export { Profile, ProfileSchema, ValidateProfileError } from './model/types/profile';
 export { profileActions, profileReducer } from './model/slice/profileSlice';

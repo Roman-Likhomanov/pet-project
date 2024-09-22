@@ -1,8 +1,7 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { fetchProfileData, ValidateProfileError } from 'entities/Profile';
-import { validateProfileData } from 'entities/Profile/model/services/validateProfileData/validateProfileData';
+import { ValidateProfileError } from '../../../index';
+import { validateProfileData } from '../validateProfileData/validateProfileData';
 
 const data = {
     first: 'Roman',
