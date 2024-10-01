@@ -20,6 +20,7 @@ import { useParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useAppDispatch/useInitialEffect';
 import { Page } from 'widgets/Page/Page';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
+import {VStack} from 'shared/ui/Stack/VStack/VStack';
 
 interface ProfilePageProps {
     className?: string
@@ -88,28 +89,30 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <Page className={classNames('', {}, [className])}>
-                <ProfilePageHeader />
-                {validateErrors?.length && validateErrors.map((err) => (
-                    <Text
-                        theme={TextTheme.ERROR}
-                        text={validateErrorTranslates[err]}
-                        key={err}
+                <VStack max gap={'16'}>
+                    <ProfilePageHeader />
+                    {validateErrors?.length && validateErrors.map((err) => (
+                        <Text
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslates[err]}
+                            key={err}
+                        />
+                    ))}
+                    <ProfileCard
+                        form={form}
+                        isLoading={isLoading}
+                        error={error}
+                        onChangeFirstName={onChangeFirstName}
+                        onChangeLastName={onChangeLastName}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeUsername={onChangeUsername}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCountry={onChangeCountry}
+                        readonly={readonly}
                     />
-                ))}
-                <ProfileCard
-                    form={form}
-                    isLoading={isLoading}
-                    error={error}
-                    onChangeFirstName={onChangeFirstName}
-                    onChangeLastName={onChangeLastName}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-                    onChangeUsername={onChangeUsername}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCountry={onChangeCountry}
-                    readonly={readonly}
-                />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

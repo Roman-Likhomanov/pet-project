@@ -10,6 +10,7 @@ import { Country } from 'entities/Country/model/types/country';
 import { CountrySelect } from 'entities/Country/ui/CountrySelect/CountrySelect';
 import { Profile } from '../../../Profile/index';
 import cls from './ProfileCard.module.scss';
+import {HStack, VStack} from 'shared/ui/Stack';
 
 interface ProfileCardProps {
     className?: string
@@ -38,22 +39,22 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
+            <HStack justify={'center'} max className={classNames(cls.ProfileCard, {}, [className, cls.loading])}>
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+            <HStack justify={'center'} max className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
                     align={TextAlign.CENTER}
                     title={t('Произошла ошибка при загрузке')}
                     text={t('Попробуйте обновить')}
                 />
-            </div>
+            </HStack>
         );
     }
 
@@ -62,12 +63,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     };
 
     return (
-        <div className={classNames(cls.ProfileCard, mods, [className])}>
-            <div className={cls.data}>
+        <VStack gap={'8'} max className={classNames(cls.ProfileCard, mods, [className])}>
                 {form?.avatar && (
-                    <div className={cls.avatarWrapper}>
+                    <HStack justify={'center'} max className={cls.avatarWrapper}>
                         <Avatar src={form?.avatar} />
-                    </div>
+                    </HStack>
                 )}
                 <Input
                     readonly={readonly}
@@ -123,8 +123,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     onChange={onChangeCountry}
                     readonly={readonly}
                 />
-            </div>
 
-        </div>
+        </VStack>
     );
 };
