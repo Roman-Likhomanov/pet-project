@@ -6,13 +6,13 @@ import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { HStack } from 'shared/ui/Stack';
 import { addCommentFormActions, addCommentFormReducer } from '../../model/slice/addCommentFormSlice';
 import cls from './AddCommentForm.module.scss';
 import {
     getAddCommentFormError,
     getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
-import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -39,7 +39,7 @@ const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) 
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack justify={'between'} max className={classNames(cls.AddCommentForm, {}, [className])}>
+            <HStack justify="between" max className={classNames(cls.AddCommentForm, {}, [className])}>
                 <Input
                     value={text}
                     onChange={onCommentTextChange}

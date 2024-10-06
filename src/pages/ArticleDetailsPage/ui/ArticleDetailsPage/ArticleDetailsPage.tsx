@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useAppDispatch/useInitialEffe
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
@@ -23,7 +24,6 @@ import { fetchCommentsByArticleId } from '../../model/services/fetchCommensByArt
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
-import {VStack} from 'shared/ui/Stack';
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -62,7 +62,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <VStack gap={'16'} max>
+                <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <Text

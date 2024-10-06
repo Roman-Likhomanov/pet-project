@@ -19,8 +19,8 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useAppDispatch/useInitialEffect';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
-import {VStack} from 'shared/ui/Stack/VStack/VStack';
 
 interface ProfilePageProps {
     className?: string
@@ -89,7 +89,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <Page className={classNames('', {}, [className])}>
-                <VStack max gap={'16'}>
+                <VStack max gap="16">
                     <ProfilePageHeader />
                     {validateErrors?.length && validateErrors.map((err) => (
                         <Text
